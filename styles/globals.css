@@ -1,15 +1,24 @@
-/* Глобальные стили для проекта, их можно дополнять и менять по желанию */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
+html {
+  block-size: 100%;
+}
+
 body {
   min-inline-size: 375px;
   max-inline-size: 1440px;
+  min-block-size: 100%;
   margin: 0 auto;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  color: var(--text-color);
+  background-color: var(--page-bg-color);
+  overflow-x: clip;
 }
 
 h1,
@@ -36,7 +45,10 @@ picture {
 button,
 a {
   color: currentColor;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-inline-size: 100%;
 }
