@@ -293,7 +293,7 @@
   display: block;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 768px) {
   :root {
     --page-padding: 20px;
   }
@@ -306,6 +306,44 @@
     margin-block-start: 60px;
   }
 
+  .footer {
+    margin-block-start: 60px;
+  }
+
+  .header__rec {
+    inset-block-start: 20px;
+    inset-inline-end: 20px;
+  }
+
+  .header__title-line {
+    display: inline;
+  }
+
+  .header__title-line + .header__title-line::before {
+    content: " ";
+  }
+
+  .section_concentration > .section__title,
+  .section_tips > .section__title {
+    grid-column: 1;
+  }
+
+  .section_concentration > .section__content,
+  .section_tips > .section__content {
+    grid-column: 2;
+    inline-size: 100%;
+  }
+
+  .section_tips .section__promo {
+    max-inline-size: none;
+  }
+
+  .section_distractions .section__title {
+    margin-block-end: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   .header,
   .footer {
     block-size: 1024px;
@@ -326,28 +364,11 @@
     white-space: nowrap;
   }
 
-  .header__title-line {
-    display: inline;
-  }
-
-  .header__title-line + .header__title-line::before {
-    content: " ";
-  }
-
   .header__description {
     inset-block-start: 724px;
     inset-inline-start: 384px;
     inline-size: 364px;
     block-size: 117px;
-  }
-
-  .header__rec {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
-  }
-
-  .footer {
-    margin-block-start: 60px;
   }
 
   .footer__title {
@@ -362,25 +383,6 @@
     inline-size: 236px;
   }
 
-  .section_concentration > .section__title,
-  .section_tips > .section__title {
-    grid-column: 1;
-  }
-
-  .section_concentration > .section__content,
-  .section_tips > .section__content {
-    grid-column: 2;
-    inline-size: 100%;
-  }
-
-  .section__content {
-    gap: 20px;
-  }
-
-  .card__text {
-    margin-block-start: 10px;
-  }
-
   .section_concentration,
   .section_tips {
     display: grid;
@@ -393,21 +395,9 @@
     display: block;
   }
 
-  .section_distractions .section__title {
-    margin-block-end: 20px;
-  }
-
   .section_distractions .section__content {
     display: grid;
     gap: 20px;
-  }
-
-  .section_tips .section__content {
-    display: grid;
-  }
-
-  .section_tips .section__promo {
-    max-inline-size: none;
   }
 
   .section_gallery {
@@ -466,18 +456,6 @@
 }
 
 @media (min-width: 1024px) {
-  :root {
-    --page-padding: 20px;
-  }
-
-  .content {
-    padding-block-start: 60px;
-  }
-
-  .section + .section {
-    margin-block-start: 60px;
-  }
-
   .header,
   .footer {
     block-size: 768px;
@@ -504,14 +482,6 @@
     white-space: nowrap;
   }
 
-  .header__title-line {
-    display: inline;
-  }
-
-  .header__title-line + .header__title-line::before {
-    content: " ";
-  }
-
   .header__description {
     inset-block-start: 563px;
     inset-inline-start: auto;
@@ -519,15 +489,6 @@
     inline-size: min(491px, calc(100% - (var(--page-padding) * 2)));
     block-size: 70px;
     max-inline-size: none;
-  }
-
-  .header__rec {
-    inset-block-start: 20px;
-    inset-inline-end: 20px;
-  }
-
-  .footer {
-    margin-block-start: 60px;
   }
 
   .footer__title {
@@ -541,25 +502,6 @@
   .section__title_long {
     max-inline-size: none;
     inline-size: 315px;
-  }
-
-  .section_tips .section__promo {
-    max-inline-size: none;
-  }
-
-  .section_concentration > .section__title,
-  .section_tips > .section__title {
-    grid-column: 1;
-  }
-
-  .section_concentration > .section__content,
-  .section_tips > .section__content {
-    grid-column: 2;
-    inline-size: 100%;
-  }
-
-  .section__content {
-    gap: 20px;
   }
 
   .section_concentration,
