@@ -384,7 +384,7 @@
   .section_concentration,
   .section_tips {
     display: grid;
-    grid-template-columns: 236px minmax(0, 472px);
+    grid-template-columns: 236px minmax(0, 1fr);
     column-gap: 20px;
     align-items: start;
   }
@@ -486,8 +486,9 @@
 
   .header__theme-menu {
     inset-block-start: 20px;
-    inset-inline-start: 397px;
+    inset-inline-start: 50%;
     inset-inline-end: auto;
+    transform: translateX(-50%);
   }
 
   .header__theme-menu-list {
@@ -513,8 +514,9 @@
 
   .header__description {
     inset-block-start: 563px;
-    inset-inline-start: 513px;
-    inline-size: 491px;
+    inset-inline-start: auto;
+    inset-inline-end: var(--page-padding);
+    inline-size: min(491px, calc(100% - (var(--page-padding) * 2)));
     block-size: 70px;
     max-inline-size: none;
   }
@@ -563,7 +565,7 @@
   .section_concentration,
   .section_tips {
     display: grid;
-    grid-template-columns: 315px minmax(0, 649px);
+    grid-template-columns: 315px minmax(0, 1fr);
     column-gap: 20px;
     align-items: start;
   }
@@ -592,48 +594,42 @@
   }
 
   .section_gallery .gallery {
-    position: relative;
-    block-size: 1091px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: 260px 315px 433px;
+    gap: 20px;
+    block-size: auto;
   }
 
   .section_gallery .gallery__item {
-    position: absolute;
+    position: static;
     margin: 0;
+    block-size: 100%;
   }
 
   .section_gallery .gallery__item:nth-child(1) {
-    inset-block-start: 0;
-    inset-inline-start: 0.08%;
-    inline-size: 66.06%;
-    block-size: 260px;
+    grid-column: 1 / span 2;
+    grid-row: 1;
   }
 
   .section_gallery .gallery__item:nth-child(2) {
-    inset-block-start: 0;
-    inset-inline-start: 68.09%;
-    inline-size: 31.91%;
-    block-size: 595px;
+    grid-column: 3;
+    grid-row: 1 / span 2;
   }
 
   .section_gallery .gallery__item:nth-child(3) {
-    inset-block-start: 323px;
-    inset-inline-start: 0;
-    inline-size: 32.01%;
-    block-size: 768px;
+    grid-column: 1;
+    grid-row: 2 / span 2;
   }
 
   .section_gallery .gallery__item:nth-child(4) {
-    inset-block-start: 658px;
-    inset-inline-start: 34.04%;
-    inline-size: 65.96%;
-    block-size: 433px;
+    grid-column: 2 / span 2;
+    grid-row: 3;
   }
 
   .section_gallery .gallery__item:nth-child(5) {
-    inset-block-start: 323px;
-    inset-inline-start: 34.04%;
-    inline-size: 32.02%;
-    block-size: 315px;
+    grid-column: 2;
+    grid-row: 2;
   }
 }
 
