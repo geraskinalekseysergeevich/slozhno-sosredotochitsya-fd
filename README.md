@@ -16,3 +16,5 @@
 - `scripts/` — логика переключения темы
 - `images/` — изображения и иконки
 - `fonts/` — шрифты
+
+Ссылка: https://github.com/geraskinalekseysergeevich/slozhno-sosredotochitsya-fd.git
