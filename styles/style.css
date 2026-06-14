@@ -18,7 +18,7 @@
 
 .decorated-zone::before,
 .decorated-zone::after {
-  content: '';
+  content: "";
   position: absolute;
   display: block;
   inline-size: 25px;
@@ -59,7 +59,8 @@
 }
 
 .header__theme-menu-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -120,7 +121,7 @@
 }
 
 .header__rec::after {
-  content: '';
+  content: "";
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
@@ -140,7 +141,6 @@
   inset-inline-start: var(--page-padding);
   max-inline-size: 355px;
   inline-size: 355px;
-  min-block-size: 117px;
   display: flex;
   align-items: center;
   background-color: var(--accent-color);
@@ -199,6 +199,7 @@
 .card {
   display: grid;
   gap: 0;
+  align-content: start;
 }
 
 .card__title {
@@ -292,11 +293,6 @@
   display: block;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .page {
-    background-attachment: scroll;
-  }
-}
 @media (min-width: 768px) and (max-width: 1023px) {
   :root {
     --page-padding: 20px;
@@ -494,6 +490,10 @@
     inset-inline-end: auto;
   }
 
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
   .header__title {
     inset-block-start: calc(50% - 65px);
     inset-inline-start: 0;
@@ -516,6 +516,7 @@
     inset-inline-start: 513px;
     inline-size: 491px;
     block-size: 70px;
+    max-inline-size: none;
   }
 
   .header__rec {
@@ -559,10 +560,6 @@
     gap: 20px;
   }
 
-  .card__text {
-    margin-block-start: 10px;
-  }
-
   .section_concentration,
   .section_tips {
     display: grid;
@@ -577,11 +574,12 @@
 
   .section_distractions .section__content {
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
   }
 
-  .section_tips .section__content {
-    display: grid;
+  .section_distractions .section__title {
+    margin-block-end: 20px;
   }
 
   .section_gallery {
@@ -639,3 +637,8 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    background-attachment: scroll;
+  }
+}
