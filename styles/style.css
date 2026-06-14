@@ -303,7 +303,7 @@
   }
 
   .section + .section {
-    margin-block-start: 60px;
+    margin-block-start: 80px;
   }
 
   .footer {
